@@ -17,7 +17,7 @@ import {
   TouchableOpacity,
   Button,
 } from 'react-native';
-import Toast from './src/components/ToastExample'
+import Toast from './src/components/ToastModule'
 import changeNavigationBarColor from 'react-native-navigation-bar-color';
 const colors = [
   { id: "white", color: "#fff" },
