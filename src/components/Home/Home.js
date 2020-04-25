@@ -19,7 +19,7 @@ class Home extends Component {
         message: "",
         colorArray: []
     }
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
         this.setColor();
     }
     setColor = async () => {
@@ -65,13 +65,11 @@ class Home extends Component {
                         </View>
                         <View style={styles.color}>
                             <Button onPress={async () => {
-                                console.log(col, "color");
-
-                                await this.setState({
+                                changeNavigationBarColor(col)
+                                this.setState({
                                     ...this.state,
                                     color: col,
                                 })
-                                changeNavigationBarColor(col)
                                 this.state.message === "" ? Toast.show("Touch color from above", Toast.SHORT) : Toast.show(this.state.message, Toast.SHORT)
                             }} title="Click me" color="lightgreen" />
                         </View>
