@@ -10,25 +10,21 @@ import {
 } from 'react-native';
 import Toast from '../ToastModule'
 import changeNavigationBarColor from 'react-native-navigation-bar-color';
-const colors = [
-    { id: "white", color: "#fff" },
-    { id: "red", color: '#f28b82' },
-    { id: "orange", color: '#fbbc04' },
-    { id: "yellow", color: '#fff475' },
-    { id: "green", color: '#ccff90' },
-    { id: "cyan", color: '#a7ffeb' },
-    { id: "lightblue", color: '#cbf0f8' },
-    { id: "blue", color: '#aecbfa' },
-    { id: "purple", color: '#d7aefb' },
-    { id: "pink", color: '#fdcfe8' },
-    { id: "brown", color: '#e6c9a8' },
-    { id: "grey", color: '#e8eaed' },
-];
+import colorjson from '../../utils/colors.json'
 let col = "";
 class Home extends Component {
     state = {
         color: "white",
-        message: ""
+        message: "",
+        colorArray: []
+    }
+    componentWillMount() {
+        this.setColor();
+    }
+    setColor = async () => {
+        this.setState({
+            colorArray: colorjson
+        })
     }
     render() {
         return (
@@ -46,7 +42,7 @@ class Home extends Component {
                             flexDirection: "row",
                             flexWrap: "wrap",
                         }}>
-                            {colors.map(el => (
+                            {this.state.colorArray.map(el => (
                                 <TouchableOpacity
                                     onPress={() => {
                                         col = el.color;

@@ -188,6 +188,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-fs')
     implementation project(':react-native-navigation-bar-color')
     implementation fileTree(dir: "libs", include: ["*.jar"])
     //noinspection GradleDynamicVersion
