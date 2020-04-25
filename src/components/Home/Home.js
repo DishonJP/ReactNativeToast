@@ -11,6 +11,7 @@ import {
 import Toast from '../ToastModule'
 import changeNavigationBarColor from 'react-native-navigation-bar-color';
 import colorjson from '../../utils/colors.json'
+import styles from './styles';
 let col = "";
 class Home extends Component {
     state = {
@@ -37,11 +38,7 @@ class Home extends Component {
                             backgroundColor: this.state.color,
                             height: "100%"
                         }}>
-                        <View style={{
-                            flex: 1,
-                            flexDirection: "row",
-                            flexWrap: "wrap",
-                        }}>
+                        <View style={styles.view}>
                             {this.state.colorArray.map(el => (
                                 <TouchableOpacity
                                     onPress={() => {
@@ -66,11 +63,7 @@ class Home extends Component {
                                 </TouchableOpacity>
                             ))}
                         </View>
-                        <View style={{
-                            marginVertical: 20,
-                            width: 150,
-                            alignSelf: "center",
-                        }}>
+                        <View style={styles.color}>
                             <Button onPress={async () => {
                                 console.log(col, "color");
 
