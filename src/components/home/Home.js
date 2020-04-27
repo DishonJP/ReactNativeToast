@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import Toast from '../ToastModule'
 import changeNavigationBarColor from 'react-native-navigation-bar-color';
-import colorjson from '../../utils/colors.json'
+import colorjson from '../../asserts/colors.json'
 import styles from './styles';
 let col = "";
 class Home extends Component {
